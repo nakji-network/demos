@@ -9,9 +9,10 @@ function Historical() {
   const fetchData = () => {
     fetch("https://api.nakji.network/v1/data/nakji.solanatoken.0_0_0.token_trade")
       .then(response => {
-        return response.json()
+        return response.text()
       })
       .then(data => {
+        console.log(data.split("/").map(JSON.parse))
         setData(data)
       })
   }
