@@ -3,17 +3,17 @@ import React, { useState } from "react"
 import logo from './logo.png'
 
 function Historical() {
+  const endpoint = "https://api.nakji.network/v1/data/nakji.solanatoken.0_0_0.token_trade"
 
   const [data, setData] = useState([]);
 
   const fetchData = () => {
-    fetch("https://api.nakji.network/v1/data/nakji.solanatoken.0_0_0.token_trade")
+    fetch(endpoint)
       .then(response => {
         return response.text()
       })
       .then(data => {
-        console.log(data.split("/").map(JSON.parse))
-        setData(data)
+        setData(data.split("\n").filter(x => x != "").map(JSON.parse))
       })
   }
 
@@ -26,8 +26,16 @@ function Historical() {
       <header className="header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <h3>Query https://api.nakji.network/v1/data/nakji.solanatoken.0_0_0.token_trade</h3>
-      {data}
+      <h3>Query {endpoint}</h3>
+      {data.map(d => (
+        <div style={{paddingBottom: "15px"}}>
+          {Object.entries(d).map(([k, v]) => (
+            <div>
+              {k}: {JSON.stringify(v)}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
