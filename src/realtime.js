@@ -52,8 +52,8 @@ function TxItem({data: {ts, From, Hash, Size, Price, Recipient, Payload}}) {
     <p>{"{"}</p>
     <div style={{paddingLeft: '12px'}}>
       <p>{"\t"}ts: {ts} </p>
-      <p>{"\t"}From {'('}not decrypted{')'}: {From} </p>
-      <p>{"\t"}To {'('}decrypted{')'}: {recep} </p>
+      <p>{"\t"}From {'('}not decoded{')'}: {From} </p>
+      <p>{"\t"}To {'('}decoded{')'}: {recep} </p>
       <p>{"\t"}Price: {parseInt(price_dehex.toString('hex'), 16)} </p>
     </div>
     <p>{"}"}</p>
