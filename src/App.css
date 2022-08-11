@@ -1,5 +1,6 @@
 .App {
   /*text-align: center;*/
+  background-color: #343434;
 }
 
 .App-logo {
@@ -33,11 +34,17 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Content {
+  padding-left: 48px;
+  padding-right: 48px;
+  color: #fff;
+}
+
+.Data-window{
+  max-height: 70vh;
+  overflow: auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fff;
+  padding: 16px;
 }

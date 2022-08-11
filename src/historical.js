@@ -26,16 +26,20 @@ function Historical() {
       <header className="header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <h3>Query {endpoint}</h3>
-      {data.map(d => (
-        <div style={{paddingBottom: "15px"}}>
-          {Object.entries(d).map(([k, v]) => (
-            <div>
-              {k}: {JSON.stringify(v)}
-            </div>
-          ))}
+      <div className="Content">
+        <h3>Query {endpoint}</h3>
+        <div className="Data-window">
+            {data.map(d => (
+                <div style={{paddingBottom: "16px"}}>
+                {Object.entries(d).map(([k, v]) => (
+                    <div>
+                    {k}: {JSON.stringify(v)}
+                    </div>
+                ))}
+                </div>
+            ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }

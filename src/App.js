@@ -9,12 +9,12 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Link to="/historical" target="blank">
           <h2>
-            Historical Data
+            Historical Data Example
           </h2>
         </Link>
         <Link to="/realtime" target="blank">
           <h2>
-            Real-time Data
+            Real-time Data Example
           </h2>
         </Link>
       </header>
